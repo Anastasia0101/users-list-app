@@ -1,52 +1,35 @@
 <template>
   <div>
     <ul class="list">
-      <li v-for="user in users" :key="user.id" class="list__item">
+      <li v-for="user in state.users" :key="user.id" class="list__item">
         <UserItem :user="user" />
       </li>
     </ul>
-    <button type="button" v-if="isDisplayButton" @click="showMoreUsers()">
+    <button type="button">
       Show more
     </button>
   </div>
 </template>
 
-<script>
+<script setup>
+import { reactive } from "@vue/reactivity";
 import UserItem from "./UserItem.vue";
 
-export default {
-  name: "UsersList",
-  components: {
-    UserItem,
-  },
-  data() {
-    return {
-      users: [],
-      usersNumber: 6,
-      isDisplayButton: true,
-    };
-  },
-  created() {
-    this.getUsers();
-  },
-  methods: {
-    getUsers() {
-      const url = `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=${this.usersNumber}`;
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          this.users = data.users.sort((firstUser, secondUser) => {
-            return firstUser.registration_timestamp - secondUser.registration_timestamp;
-          }).reverse();
-          this.isDisplayButton = data.users.length < data.total_users;
-        });
-    },
-    showMoreUsers() {
-      this.usersNumber += 6;
-      this.getUsers();
-    },
-  },
-};
+const state = reactive({
+  usersNumber: 6,
+  users: []
+});
+
+const usersUrl = `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=${state.usersNumber}`; 
+
+state.users = await fetch(usersUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      return data.users.sort((firstUser, secondUser) => {
+        return firstUser.registration_timestamp - secondUser.registration_timestamp;
+      }).reverse();
+    });
+
 </script>
 <style scoped>
 .list {

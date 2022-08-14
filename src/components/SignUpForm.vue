@@ -20,7 +20,14 @@ import PositionsList from './PositionsList.vue';
 import { reactive } from '@vue/reactivity';
 
 import useVuelidate from '@vuelidate/core';
-import { required, email, helpers, requiredIf, maxLength, minLength } from "vuelidate/lib/validators";
+import { 
+  required, 
+  email, 
+  helpers, 
+  requiredIf, 
+  maxLength, 
+  minLength 
+} from "vuelidate/lib/validators";
 
 const regexpLettersSpace = helpers.regex('regexpLettersSpace', /^[a-zA-Z\s]*$/);
 const regexpPhone = helpers.regex('regexpPhone', /^[+]{0,1}380([0-9]{9})$/);
@@ -59,7 +66,7 @@ const rules = {
   },
   photo: {
     required: requiredIf(function() {
-      return !this.photo.length;
+      return !state.photo.length;
     })
   }
 };
@@ -67,16 +74,16 @@ const rules = {
 const formValidation$ = useVuelidate(rules, state);
 
 function onFileChange(event) {
-  this.photo = event.target.files[0];
+  state.photo = event.target.files[0];
 }
 
 function onFormSubmit() {
   let formData = new FormData();
-  formData.append('position_id', this.positionId); 
-  formData.append('name', this.name);
-  formData.append('email', this.email);
-  formData.append('phone', this.phone);
-  formData.append('photo', this.photo);
+  formData.append('position_id', state.positionId); 
+  formData.append('name', state.name);
+  formData.append('email', state.email);
+  formData.append('phone', state.phone);
+  formData.append('photo', state.photo);
   saveUser(formData);
 }
 
