@@ -1,18 +1,26 @@
 <template>
   <div class="page">
-    <UsersList />
-    <SingUpForm />
+    <Suspense timeout="0">
+      <template #default>
+        <!-- <UsersList /> -->
+        <SingUpForm />
+      </template>
+  
+      <template #fallback>
+        Loading...
+      </template>
+    </Suspense>
   </div>
 </template>
 
 <script>
-import UsersList from "../components/UsersList.vue";
+// import UsersList from "../components/UsersList.vue";
 import SingUpForm from "../components/SignUpForm.vue";
 
 export default {
   name: "MainPage",
   components: { 
-    UsersList,
+    // UsersList,
     SingUpForm,
   },
 };
