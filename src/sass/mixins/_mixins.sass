@@ -1,0 +1,26 @@
+@mixin base-text
+  font-family: nunito, sans-serif
+  font-weight: 400
+  font-size: 16px
+  line-height: 26px
+
+@mixin heading-text
+  @include base-text
+  font-size: 40px
+  line-height: 40px
+
+@mixin button
+  background-color: $primaryColor
+  border-radius: 80px
+  padding: 4px 23px
+  border: none
+  color: #000000
+  margin: 50px 0 
+  &:hover
+    background-color: #FFE302
+    cursor: pointer
+    transition-duration: 0.5s
+  &:disabled
+    background-color: #B4B4B4
+    color: #FFFFFF
+

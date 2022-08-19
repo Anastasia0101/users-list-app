@@ -1,21 +1,24 @@
 <template>
   <form class="form" @submit.prevent="onFormSubmit()">
-    <input type="text" placeholder="Your name" v-model="state.name" class="form__input" />
-    <input type="email" placeholder="Email" v-model="state.email" class="form__input" />
-    <input type="text" placeholder="Phone" v-model="state.phone" class="form__input" />
+    <div class="form-fields">
+      <input type="text" placeholder="Your name" v-model="state.name" class="form-fields__input" />
+      <input type="email" placeholder="Email" v-model="state.email" class="form-fields__input" />
+      <input type="text" placeholder="Phone" v-model="state.phone" class="form-fields__input" />
 
-    <PositionsList v-model="state.positionId" />
+      <Positions v-model="state.positionId" class="form-fields__radio" />
 
-    <div>
-      <label>Choose file to upload</label>
-      <input type="file" accept=".jpg, .jpeg" @change="onFileChange($event)" />
+      <div class="form-fields__file-input">
+        <label for="file-input" class="label">Upload</label>
+        <p class="">{{state.photo.name}}</p>
+        <input id="file-input" type="file" accept=".jpg, .jpeg" @change="onFileChange($event)" class="file-input"/>
+      </div>
     </div>
-    <button type="submit" :disabled="formValidation$.$invalid">Sign up</button>
+    <button type="submit" :disabled="formValidation$.$invalid" class="form__button">Sign up</button>
   </form>
 </template>
 
 <script setup>
-import PositionsList from './PositionsList.vue';
+import Positions from './Positions.vue';
 
 import { reactive } from '@vue/reactivity';
 
@@ -103,5 +106,49 @@ function saveUser(formData) {
 }
 </script>
 
-<style>
+<style lang="sass" scoped>
+@import "../../src/sass/styles"
+
+.form
+  display: flex
+  flex-direction: column
+  justify-content: center
+  
+.form-fields
+  width: 380px
+  margin: 0 auto
+
+.form-fields__input
+  height: 54px
+  width: 100%
+  margin: 25px 0
+  border-radius: 4px
+  border: 1px solid #D0CFCF
+  padding: 14px
+  box-sizing: border-box
+  background-color: $backgroundColor
+
+.form-fields__input::placeholder
+  @include base-text
+
+.form__button
+  @include button
+  @include base-text
+  margin: 0 auto
+
+.form-fields__file-input
+  display: flex
+.label
+  display: inline-block
+  cursor: pointer
+  height: 54px
+  width: 83px
+  border: 1px solid #000000
+  @include base-text
+  line-height: 54px
+  border-top-left-radius: 4px
+  border-bottom-left-radius: 4px
+
+.file-input
+  display: none
 </style>

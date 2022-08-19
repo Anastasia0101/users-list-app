@@ -20,13 +20,12 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-}
+<style lang="sass">
 
-body {
-  margin: 0;
-}
+@import url("https://use.typekit.net/cjp4srr.css")
+
+body
+  margin: 0
+  text-align: center
+
 </style>

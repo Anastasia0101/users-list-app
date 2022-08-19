@@ -21,13 +21,15 @@ export default {
     },
   },
 };
+  
 </script>
 
-<style scoped>
-.user__text {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+<style lang="sass" scoped>
+.user__text
+  width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  /* styles for correctly displaying text if it is so long  */
+
 </style>

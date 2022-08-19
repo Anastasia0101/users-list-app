@@ -1,7 +1,13 @@
 <template>
   <div class="page">
-    <UsersList />
-    <SingUpForm />
+    <section class="page__section">
+      <h2 class="title">Working with GET request</h2>
+      <UsersList />
+    </section>
+    <section class="page__section">
+      <h2 class="title">Working with POST request</h2>
+      <SingUpForm />
+    </section>
   </div>
 </template>
 
@@ -18,8 +24,18 @@ export default {
 };
 </script>
 
-<style scoped>
-.page {
-  background: #f8f8f8;
-}
+<style lang="sass" scoped>
+@import "../../src/sass/styles"
+
+.page 
+  background: #F8F8F8
+
+.page__section
+  max-width: 1170px
+  margin: 0 auto
+
+.title
+  @include heading-text
+  text-align: center
+  padding-top: 90px 
 </style>
