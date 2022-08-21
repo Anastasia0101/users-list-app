@@ -25,7 +25,6 @@ export default {
 @import url("https://use.typekit.net/cjp4srr.css")
 
 body
-  margin: 0
   text-align: center
 
 </style>

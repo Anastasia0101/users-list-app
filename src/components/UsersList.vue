@@ -39,8 +39,6 @@ const users = await fetch(usersUrl)
   justify-content: space-between
   gap: 29px
   margin: 0 auto
-  padding: 0
-  list-style: none
 
 .list__item 
   min-width: 284px

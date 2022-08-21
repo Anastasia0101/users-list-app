@@ -43,11 +43,6 @@ function onPositionChange(positionId) {
   text-align: left
   margin: 8px 0
 
-.list
-  list-style: none
-  padding: 0
-  margin: 0
-
 .list__item
   text-align: left
   display: flex
@@ -60,7 +55,6 @@ function onPositionChange(positionId) {
   cursor: pointer
 
 .radio-input
-  -webkit-appearance: none
   -moz-appearance: none
   appearance: none
   width: 20px
@@ -69,7 +63,6 @@ function onPositionChange(positionId) {
   border-radius: 50%
   background-clip: content-box
   padding: 4px
-  margin: 0
   cursor: pointer
   
 .radio-input:checked
