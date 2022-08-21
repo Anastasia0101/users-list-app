@@ -9,7 +9,7 @@
 
       <div class="form-fields__file-input">
         <label for="file-input" class="label">Upload</label>
-        <p class="">{{state.photo.name}}</p>
+        <p class="file-name">{{state.photo.name}}</p>
         <input id="file-input" type="file" accept=".jpg, .jpeg" @change="onFileChange($event)" class="file-input"/>
       </div>
     </div>
@@ -148,6 +148,11 @@ function saveUser(formData) {
   line-height: 54px
   border-top-left-radius: 4px
   border-bottom-left-radius: 4px
+
+.file-name
+  @include base-text
+  line-height: 54px
+  border: 1px solid #D0CFCF
 
 .file-input
   display: none

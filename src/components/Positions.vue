@@ -4,12 +4,13 @@
     <li v-for="position in positions" :key="position.id" class="list__item">
       <input
         type="radio"
+        :id="position.name"
         name="position.name"
         :value="props.modelValue"
         @change="onPositionChange(position.id)"
         class="radio-input"
       />
-      <label class="label">{{ position.name }}</label>
+      <label :for="position.name" class="label">{{ position.name }}</label>
     </li>
   </ul>
 </template>
@@ -42,7 +43,6 @@ function onPositionChange(positionId) {
   text-align: left
   margin: 8px 0
 
-  
 .list
   list-style: none
   padding: 0
@@ -50,11 +50,29 @@ function onPositionChange(positionId) {
 
 .list__item
   text-align: left
+  display: flex
+  align-content: center
+  margin-top: 8px
 
 .label
   @include base-text
+  margin-left: 12px
+  cursor: pointer
 
 .radio-input
-  margin: 0 12px 0 0 
-
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  width: 20px
+  height: 20px
+  border: 1px solid #D0CFCF
+  border-radius: 50%
+  background-clip: content-box
+  padding: 4px
+  margin: 0
+  cursor: pointer
+  
+.radio-input:checked
+  background-color: $secondaryColor
+  border: 1px solid $secondaryColor
 </style>
