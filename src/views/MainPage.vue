@@ -1,38 +1,42 @@
 <template>
-  <div class="page">
-    <section class="page__section">
+  <Header />
+  <main class="main">
+    <section class="main__section">
       <h2 class="title">Working with GET request</h2>
       <UsersList />
     </section>
-    <section class="page__section">
+    <section class="main__section">
       <h2 class="title">Working with POST request</h2>
       <SingUpForm />
     </section>
-  </div>
+  </main>
 </template>
 
 <script>
+import Header from "../components/Header.vue";
 import UsersList from "../components/UsersList.vue";
 import SingUpForm from "../components/SignUpForm.vue";
 
 export default {
   name: "MainPage",
-  components: { 
+  components: {
     UsersList,
     SingUpForm,
-  },
+    Header
+},
 };
 </script>
 
 <style lang="sass" scoped>
 @import "../../src/sass/styles"
 
-.page 
+.header
+  @include container
+.main 
   background: #F8F8F8
 
-.page__section
-  max-width: 1170px
-  margin: 0 auto
+.main__section
+  @include container
 
 .title
   @include heading-text

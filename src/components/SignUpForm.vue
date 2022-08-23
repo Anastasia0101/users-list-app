@@ -8,8 +8,12 @@
       <Positions v-model="state.positionId" class="form-fields__radio" />
 
       <div class="form-fields__file-input">
-        <label for="file-input" class="label">Upload</label>
-        <p class="file-name">{{state.photo.name}}</p>
+        <label for="file-input" class="label">
+          <span class="label__button">Upload</span>
+          <span class="label__text">
+            {{state.photo.name ?? 'Upload your photo'}}
+          </span>
+        </label>
         <input id="file-input" type="file" accept=".jpg, .jpeg" @change="onFileChange($event)" class="file-input"/>
       </div>
     </div>
@@ -41,7 +45,7 @@ const state = reactive({
   email: "",
   phone: "",
   positionId: 0,
-  photo: {}
+  photo: {},
 });
 
 const rules = {
@@ -115,7 +119,8 @@ function saveUser(formData) {
   justify-content: center
   
 .form-fields
-  width: 380px
+  max-width: 380px
+  width: 90%
   margin: 0 auto
 
 .form-fields__input
@@ -139,20 +144,22 @@ function saveUser(formData) {
 .form-fields__file-input
   display: flex
 .label
-  display: inline-block
   cursor: pointer
-  height: 54px
-  width: 83px
-  border: 1px solid #000000
   @include base-text
-  line-height: 54px
+  width: 380px
+  text-align: left
+
+.label__button
+  display: inline-block
+  border: 1px solid #000000
+  padding: 0 1em
   border-top-left-radius: 4px
   border-bottom-left-radius: 4px
-
-.file-name
-  @include base-text
   line-height: 54px
+
+.label__text
   border: 1px solid #D0CFCF
+  width: 100%
 
 .file-input
   display: none
