@@ -1,11 +1,11 @@
 <template>
   <Header />
   <main class="main">
-    <section class="main__section">
+    <section id="users-list" class="main__section">
       <h2 class="title">Working with GET request</h2>
-      <UsersList />
+      <UsersList  />
     </section>
-    <section class="main__section">
+    <section id="signup-form" class="main__section">
       <h2 class="title">Working with POST request</h2>
       <SingUpForm />
     </section>
@@ -23,7 +23,7 @@ export default {
     UsersList,
     SingUpForm,
     Header
-},
+  },
 };
 </script>
 

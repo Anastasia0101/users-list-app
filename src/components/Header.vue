@@ -2,8 +2,8 @@
   <header class="header">
     <img src="../assets/images/Logo.svg" alt="Logo" class="logo">
     <nav class="navigation">
-      <a href="#" class="navigation__link">Users</a>
-      <a href="#" class="navigation__link">Sign up</a>
+      <router-link to="/#users-list" class="navigation__link">Users</router-link>
+      <router-link to="/#signup-form" class="navigation__link">Sign up</router-link>
     </nav>
   </header>
 </template>

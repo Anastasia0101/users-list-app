@@ -5,7 +5,7 @@
       <input type="email" placeholder="Email" v-model="state.email" class="form-fields__input" />
       <input type="text" placeholder="Phone" v-model="state.phone" class="form-fields__input" />
 
-      <Positions v-model="state.positionId" class="form-fields__radio" />
+      <Positions v-model="state.positionId" />
 
       <div class="form-fields__file-input">
         <label for="file-input" class="label">
