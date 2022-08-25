@@ -26,5 +26,6 @@ export default {
 
 body
   text-align: center
+  margin: 0
 
 </style>
