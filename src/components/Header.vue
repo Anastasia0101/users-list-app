@@ -2,8 +2,8 @@
   <header class="header">
     <img src="../assets/images/Logo.svg" alt="Logo" class="logo">
     <nav class="navigation">
-      <router-link to="/#users-list" class="navigation__link">Users</router-link>
-      <router-link to="/#signup-form" class="navigation__link">Sign up</router-link>
+      <router-link to="/#users-list" class="navigation__link link">Users</router-link>
+      <router-link to="/#signup-form" class="navigation__link link">Sign up</router-link>
     </nav>
   </header>
 </template>
@@ -28,8 +28,6 @@ export default {
   width: 104px
 
 .navigation__link
-  @include base-text
-  @include link
   margin-left: 10px 
 
 @media screen and (max-width: 1174px)

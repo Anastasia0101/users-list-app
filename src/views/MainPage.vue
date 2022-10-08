@@ -1,12 +1,12 @@
 <template>
   <Header />
   <main class="main">
-    <section class="main__section main__section--width-full">
+    <section class="main__section main__section--height-full">
       <Home />
     </section>
     <section id="users-list" class="main__section">
       <h2 class="title">Working with GET request</h2>
-      <UsersList  />
+      <UsersList />
     </section>
     <section id="signup-form" class="main__section">
       <h2 class="title">Working with POST request</h2>
@@ -44,10 +44,8 @@ export default {
 .main__section
   @include container
 
-.main__section--width-full
-  max-width: 100vw
+.main__section--height-full
   height: 90vh
-  margin: 0
 
 .title
   @include heading-text

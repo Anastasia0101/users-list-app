@@ -17,7 +17,7 @@
         <input id="file-input" type="file" accept=".jpg, .jpeg" @change="onFileChange($event)" class="file-input"/>
       </div>
     </div>
-    <button type="submit" :disabled="formValidation$.$invalid" class="form__button">Sign up</button>
+    <button type="submit" :disabled="formValidation$.$invalid" class="form__button button">Sign up</button>
   </form>
 </template>
 
@@ -137,8 +137,6 @@ function saveUser(formData) {
   @include base-text
 
 .form__button
-  @include button
-  @include base-text
   margin: 0 auto
 
 .form-fields__file-input

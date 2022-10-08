@@ -9,28 +9,6 @@
   font-size: 40px
   line-height: 40px
 
-@mixin button
-  background-color: $primaryColor
-  border-radius: 80px
-  padding: 4px 23px
-  border: none
-  color: #000000
-  margin: 50px 0 
-  &:hover
-    background-color: #FFE302
-    cursor: pointer
-    transition-duration: 0.5s
-  &:disabled
-    background-color: #B4B4B4
-    color: #FFFFFF
-
-@mixin link
-  @include button
-  display: inline-block
-  width: 104px
-  height: 34px
-  margin: 0
-
 @mixin container
   max-width: 1170px
   margin: 0 auto

@@ -51,8 +51,6 @@ const users = await fetch(usersUrl)
   flex-grow: 1
 
 .button
-  @include button
-  @include base-text
   padding: 4px 18px
 
 @media screen and (max-width: 915px) 

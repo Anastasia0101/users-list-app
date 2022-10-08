@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div class="container__text-content">
-      <h1 class="title">Test assignment for front-end developer</h1>
-      <p class="subtitle">What defines a good front-end developer is one that has skilled knowledge of HTML, CSS, JS with a vast understanding of User design thinking as they'll be building web interfaces with accessibility in mind. They should also be excited to learn, as the world of Front-End Development keeps evolving.</p>
-      <router-link to="/#signup-form" class="link">Sign up</router-link>
+    <div class="container__text-content text-content">
+      <h1 class="text-content__title">Test assignment for front-end developer</h1>
+      <p class="text-content__subtitle">What defines a good front-end developer is one that has skilled knowledge of HTML, CSS, JS with a vast understanding of User design thinking as they'll be building web interfaces with accessibility in mind. They should also be excited to learn, as the world of Front-End Development keeps evolving.</p>
+      <router-link to="/#signup-form" class="text-content__link link">Sign up</router-link>
     </div>
   </div>
 </template>
@@ -28,18 +28,16 @@ export default {
 .container__text-content
   width: 380px
   margin: auto
-
-.title
   color: #FFFFFF
+  padding: 1em
+
+.text-content__title
   @include heading-text
 
-.subtitle
-  color: #FFFFFF
+.text-content__subtitle
   @include base-text
   margin: 21px 0
 
-.link
-  @include link
-  @include base-text
+.text-content__link
   margin-top: 10px 
 </style>
